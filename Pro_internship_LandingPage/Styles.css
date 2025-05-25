@@ -1,0 +1,496 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fefefe;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1000;
+}
+
+header.scrolled {
+  background-color: #1E90FF;
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.6);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  height: 50px;
+  cursor: pointer;
+  filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.2));
+}
+
+nav ul.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul.nav-links li a {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+nav ul.nav-links li a.active,
+nav ul.nav-links li a:hover {
+  background: #FFD700;
+  color: #1E90FF;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  background: url('hero-car.jpg') center center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30,144,255,0.6);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.btn-primary {
+  background: #FFD700;
+  color: #1E90FF;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.6);
+}
+
+.btn-primary:hover {
+  background-color: #FFC107;
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.8);
+}
+
+/* Models Section */
+.models-section {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.models-section h2 {
+  font-size: 2.8rem;
+  color: #1E90FF;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 30px;
+}
+
+.car-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(30, 144, 255, 0.15);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.car-card h3 {
+  color: #1E90FF;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.car-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #555;
+}
+
+.btn-secondary {
+  background: #1E90FF;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #145caa;
+}
+
+/* Features Section */
+.features-section {
+  background: #1E90FF;
+  color: white;
+  padding: 70px 0;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.features-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #1c7ed6;
+  border-radius: 15px;
+  padding: 30px 25px;
+  max-width: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+}
+
+.feature-card:hover {
+  background-color: #0f4c91;
+}
+
+.feature-card img {
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Configurator Section */
+.configurator-section {
+  padding: 80px 0;
+  background: #f4f9ff;
+  text-align: center;
+}
+
+.configurator-section h2 {
+  font-size: 2.8rem;
+  color: #1E90FF;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.configurator-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Reviews Section */
+.reviews-section {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.8rem;
+  color: #1E90FF;
+  margin-bottom: 40px;
+  font-weight: 800;
+  position: relative;
+  z-index: 2;
+}
+
+.review-slider {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.review {
+  display: none;
+  font-style: italic;
+  font-size: 1.3rem;
+  padding: 0 30px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.review.active {
+  display: block;
+}
+
+.review h4 {
+  margin-top: 20px;
+  font-weight: 700;
+  color: #1E90FF;
+}
+
+/* Slider buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1E90FF;
+  color: white;
+  border: none;
+  font-size: 2.2rem;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.slider-btn:hover {
+  opacity: 1;
+}
+
+.slider-btn.prev {
+  left: 5px;
+}
+
+.slider-btn.next {
+  right: 5px;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #1E90FF;
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px #FFD700;
+}
+
+#contact-form button {
+  display: block;
+  width: 100%;
+  background: #FFD700;
+  color: #1E90FF;
+  border: none;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: #FFC107;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-icon {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 6px 12px;
+  border: 1px solid white;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #FFD700;
+  color: #1E90FF;
+}
+
+/* Fade-in animation for sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.2s;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    display: none;
+    flex-direction: column;
+    background: #1E90FF;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 0 12px;
+    padding: 20px 10px;
+    box-shadow: -3px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  nav ul.nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
